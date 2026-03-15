@@ -4,7 +4,7 @@ public class Student {
     private double midterm;
     private double finalExam;
 
-    //Constructor -> parametreden gelen degeri object icine koyar
+    //Constructor -> from parameter into the object
     public Student (String name, double midterm, double finalExam) {
         this.name = name;
         this.midterm = midterm;
@@ -24,7 +24,7 @@ public class Student {
 
     public double calculateAverage() {return midterm*0.4 + finalExam*0.6;}
 
-    public static String getLetterGrade(double avg) { // ->objecte bagli degil
+    public static String getLetterGrade(double avg) { // independent from the object (static)
 
         int grade = (int) avg / 10;
 
@@ -60,7 +60,7 @@ public class Student {
         int midterm = Integer.parseInt(args[1]);  //terminal inputs are strings as default
         int finalExam = Integer.parseInt(args[2]);
 
-        Student s1 = new Student(name, midterm, finalExam); //object olusturur and calls the constructor
+        Student s1 = new Student(name, midterm, finalExam); //forms an object and calls the constructor
 
         double avg = s1.calculateAverage();
 
