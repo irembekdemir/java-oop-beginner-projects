@@ -20,6 +20,7 @@ public class Main {
             return;}
 
         Scanner input = null; // initializing the variable input to prevent NullPointerException
+        Scanner console = null;
 
         /**
          * checks for file not found error, continues if it is fine.
@@ -58,16 +59,17 @@ public class Main {
             }
 
             Player player = new Player(initialHealth);
+            console = new Scanner(System.in);
             Logic logic = new Logic();
 
             //performs the search for optimal path
-            logic.find(dungeon, startRow, startCol, endRow, endCol, player);
+            logic.find(dungeon, startRow, startCol, endRow, endCol, player, console);
 
             //creates the output file writer and passes it to the Logic class
             try (PrintWriter out = new PrintWriter(new File(args[1]))) {
                 logic.printResult(out, initialHealth);
             }catch (IOException e) {
-                System.out.println("Error: The input file could not found.");
+                System.out.println("Error: Output file could not be created.");
             }
 
         }catch (FileNotFoundException e) {
@@ -77,6 +79,11 @@ public class Main {
             if (input != null) {
                 input.close();
             }
+
+            if (console != null) {
+                console.close();
+            }
         }
     }
+    
 }
