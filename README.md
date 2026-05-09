@@ -19,7 +19,7 @@ This repository contains beginner to intermediate level projects developed durin
 | Project | Topics | Description |
 |---|---|---|
 | Dungeon Escape Simulation | DFS, Backtracking, OOP | A dungeon adventure simulation with recursive pathfinding and room interactions |
-| Smart Home System | OOP |  |
+| Smart Home System | OOP | Java-based simulation project that manages different types of smart devices through command-based input. |
 | [Future Project] | Data Structures | Coming soon |
 
 ---
@@ -29,7 +29,7 @@ This repository contains beginner to intermediate level projects developed durin
 - Java
 - Object-Oriented Programming
 - Recursive Algorithms
-- - File Processing
+- File Processing
 - Console Applications
 
 ---
@@ -50,7 +50,7 @@ This repository contains beginner to intermediate level projects developed durin
 Java-OOP-Projects/
 │
 ├── Dungeon-Escape-Simulation/
-├── Future-Project/
+├── Smart-Home-System/
 └── README.md
 ```
 
