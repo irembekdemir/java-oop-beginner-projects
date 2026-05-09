@@ -99,7 +99,7 @@ All invalid operations and command errors are handled with descriptive error mes
 
 ## Author
 
-Developed by [Github Account]((https://github.com/irembekdemir)
+Developed by [irem bekdemir](https://github.com/irembekdemir)
 
 ## Version
 ```1.0```
