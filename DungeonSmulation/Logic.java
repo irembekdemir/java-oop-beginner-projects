@@ -25,19 +25,19 @@ public class Logic {
      * @param player the character in the dungeon.
      */
 
-    public void find(Dungeon dungeon, int startRow, int startCol, int endRow, int endCol, Player player) {
+    public void find(Dungeon dungeon, int startRow, int startCol, int endRow, int endCol, Player player, Scanner console) {
 
         maxHealth = -1;
         foundAnyPath = false;
         died = false;
-        foundKey = false; 
+        foundKey = false;
         bestPath.clear();
 
         boolean[][] visited = new boolean[dungeon.getRows()][dungeon.getCols()];
         
         List<Position> path = new ArrayList<>();
 
-        depthFirst(dungeon, startRow, startCol, endRow, endCol, player, visited, path);
+        depthFirst(dungeon, startRow, startCol, endRow, endCol, player, visited, path, console);
     }
 
     private boolean foundKey = false;
@@ -46,7 +46,7 @@ public class Logic {
      * Recursive Depth-First Search algorithm with backtracking approach.
      * Explores all possible paths to find the one with the greatest remaining health.
      */
-    private void depthFirst(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean[][] visited, List<Position> path) {
+    private void depthFirst(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean[][] visited, List<Position> path, Scanner console) {
 
         visited[r][c] = true;
 
@@ -54,13 +54,48 @@ public class Logic {
 
         // Applying the effects of the rooms & position tracking
         d.getRoom(r, c).effectOnPlayer(newPlayer);
+
+        if (d.getRoom(r, c) instanceof Room.WitchRoom) {
+
+            Room.WitchRoom witch = (Room.WitchRoom) d.getRoom(r, c);
+
+            witch.askQuestion(newPlayer, console);
+
+            path.add(new Position(r, c, newPlayer.getHealth()));
+
+            if (newPlayer.getHealth() <= 0) {
+
+                died = true;
+
+                path.remove(path.size() - 1);
+                visited[r][c] = false;
+
+                return;
+            }
+
+            depthFirst(d,
+                    endRow,
+                    endCol,
+                    endRow,
+                    endCol,
+                    newPlayer,
+                    visited,
+                    path,
+                    console);
+
+            path.remove(path.size() - 1);
+            visited[r][c] = false;
+
+            return;
+        }
+
         path.add(new Position(r, c, newPlayer.getHealth()));
 
         if (newPlayer.haveKey()) {
             foundKey = true;
         }
 
-        if (newPlayer.getHealth() == 0){
+        if (newPlayer.getHealth() <= 0){
             died = true;
 
         } else {
@@ -77,10 +112,10 @@ public class Logic {
                 }
             } else {
                 //recursion of exploring in 4 ways
-                goUp(d, r, c, endRow, endCol, newPlayer, visited, path);
-                goRight(d, r, c, endRow, endCol, newPlayer, visited, path);
-                goDown(d, r, c, endRow, endCol, newPlayer, visited, path);
-                goLeft(d, r, c, endRow, endCol, newPlayer, visited, path);
+                goUp(d, r, c, endRow, endCol, newPlayer, visited, path, console);
+                goRight(d, r, c, endRow, endCol, newPlayer, visited, path, console);
+                goDown(d, r, c, endRow, endCol, newPlayer, visited, path, console);
+                goLeft(d, r, c, endRow, endCol, newPlayer, visited, path, console);
             }
         }
 
@@ -136,39 +171,39 @@ public class Logic {
      * @param visited
      * @param path
      */
-    private void goUp(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path){
+    private void goUp(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path, Scanner console){
         int nextRow = r-1;
         int nextCol = c;
 
         if (isValid(d, nextRow, nextCol, visited)) {
-            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path);
+            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path, console);
         }
     }
  
-    private void goRight(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path){
+    private void goRight(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path, Scanner console){
         int nextRow = r;
         int nextCol = c+1;
 
         if (isValid(d, nextRow, nextCol, visited)) {
-            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path);
+            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path, console);
         }
     }
 
-    private void goDown(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path){
+    private void goDown(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path, Scanner console){
         int nextRow = r+1;
         int nextCol = c;
 
         if (isValid(d, nextRow, nextCol, visited)) {
-            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path);
+            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path, console);
         }
     }
 
-    private void goLeft(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path){
+    private void goLeft(Dungeon d, int r, int c, int endRow, int endCol, Player player, boolean [][] visited, List <Position> path, Scanner console){
         int nextRow = r;
         int nextCol = c-1;
 
         if (isValid(d, nextRow, nextCol, visited)) {
-            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path);
+            depthFirst(d, nextRow, nextCol, endRow, endCol, player, visited, path, console);
         }
     }
      /**
