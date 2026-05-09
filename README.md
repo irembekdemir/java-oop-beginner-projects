@@ -1,1 +1,72 @@
+# Java Object Oriented Programming Beginner Projects Collection
 
+A collection of Java projects created while learning and practicing:
+
+- Object-Oriented Programming (OOP)
+- Data Structures & Algorithms
+- Recursive Problem Solving
+- File I/O
+- Game Logic Design
+- DFS / Backtracking
+- Java Core Concepts
+
+This repository contains beginner to intermediate level projects developed during my Computer Engineering journey.
+
+---
+
+# Projects
+
+| Project | Topics | Description |
+|---|---|---|
+| Dungeon Escape Simulation | DFS, Backtracking, OOP | A dungeon adventure simulation with recursive pathfinding and room interactions |
+| Smart Home System | OOP |  |
+| [Future Project] | Data Structures | Coming soon |
+
+---
+
+# Technologies
+
+- Java
+- Object-Oriented Programming
+- Recursive Algorithms
+- - File Processing
+- Console Applications
+
+---
+
+# Goals of This Repository
+
+- Improve problem-solving skills
+- Practice clean code principles
+- Strengthen OOP design understanding
+- Build algorithmic thinking
+- Track personal software development progress
+
+---
+
+# Project Structure
+
+```text
+Java-OOP-Projects/
+│
+├── Dungeon-Escape-Simulation/
+├── Future-Project/
+└── README.md
+```
+
+---
+
+# About Me
+
+Computer Engineering student passionate about:
+- software development
+- algorithms
+- backend systems
+- object-oriented design
+
+Currently improving my Java and problem-solving skills through hands-on projects.
+
+---
+
+# Author
+[irem bekdemir](https://github.com/irembekdemir)
