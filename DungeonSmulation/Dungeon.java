@@ -50,6 +50,14 @@ public class Dungeon {
                 grid[r][c] = new Room.ExitRoom(); 
                 break;
 
+            case 'W':
+                grid[r][c] = new Room.WitchRoom();
+                break;
+
+            case 'P':
+                grid[r][c] = new Room.PrincessRoom();
+                break;
+
             case 'A':
             case 'B':
             case 'L':
