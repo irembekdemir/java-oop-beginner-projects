@@ -58,7 +58,7 @@ Java-OOP-Projects/
 
 # About Me
 
-Computer Engineering student passionate about:
+AI Engineering student passionate about:
 - software development
 - algorithms
 - backend systems
