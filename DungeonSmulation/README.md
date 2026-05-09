@@ -249,6 +249,6 @@ Otherwise:
 # Author
 
 Developed by [irem bekdemir](https://github.com/irembekdemir)
-
 AI Engineering Student
+
 Dungeon Escape Simulation Project – Java DFS Backtracking System
