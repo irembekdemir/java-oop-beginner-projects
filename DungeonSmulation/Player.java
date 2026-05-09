@@ -8,6 +8,7 @@ public class Player {
     private int remainingHealth;
     private boolean haveKey;
     private int shield;
+    private int maxHealth;
 
     /**
     * Creates a new player object w a specified initial health 
@@ -16,6 +17,7 @@ public class Player {
     */
     public Player(int remainingHealth) {
         this.remainingHealth = remainingHealth;
+        this.maxHealth = remainingHealth;
         this.haveKey = false;
         this.shield = 0;
     }
@@ -70,12 +72,24 @@ public class Player {
         return shield;
     }
 
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    /**
+     * Function related to the Princess Room
+     */
+    public void fullHeal() {
+        remainingHealth = maxHealth;
+    }
+
     /**
      * Prevents the corruption of DFS process caused by share state effects on unexplored paths.
      * @return
      */
     public Player copy() {
-        Player p = new Player(this.remainingHealth);
+        Player p = new Player(this.maxHealth);
+        p.setHealth(this.remainingHealth);
         p.setShield(this.shield);
         p.setHaveKey(this.haveKey);
         return p;
