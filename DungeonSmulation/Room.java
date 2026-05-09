@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * An abstrac class that forms the base of room types of the dungeon simulation.
  * Defines the effets of each room on player.
@@ -55,16 +55,64 @@ public abstract class Room {
         }
     }
 
-    public static class WitchRoom extends Room {
+    public static class PrincessRoom extends Room {
+
         @Override
-        if (takeWitch = true) {
-            public void effectOnPlayer (Player player){
-                player.heal(50);
+        public void effectOnPlayer(Player player) {
+
+            if (player.getHealth() >= 50) {
+                player.fullHeal();
+            } else {
+                player.takeDamage(10);
             }
-        } else {
-            public void effectOnPlayer (Player player) {
-                player.takeDamage(25);
+        }
+    }
+
+    public static class WitchRoom extends Room {
+
+        private int answer;
+        private String question;
+        private boolean solved = false;
+
+        public WitchRoom() {
+
+            int a = (int)(Math.random() * 10) + 1;
+            int b = (int)(Math.random() * 10) + 1;
+
+            this.answer = a + b;
+            this.question = a + " + " + b + " = ?";
+        }
+
+        public boolean isSolved() {
+            return solved;
+        }
+
+        public void askQuestion(Player player, Scanner console) {
+
+            if (solved) {
+                return;
             }
+
+            System.out.println("The Witch asks:");
+            System.out.println(question);
+
+            int userAnswer = console.nextInt();
+
+            if (userAnswer == answer) {
+
+                System.out.println("Correct! The Witch teleports you to the exit.");
+                solved = true;
+
+            } else {
+
+                System.out.println("Wrong answer... The Witch kills you.");
+                player.setHealth(0);
+            }
+        }
+
+        @Override
+        public void effectOnPlayer(Player player) {
+            // handled in Logic.java
         }
     }
       
