@@ -20,7 +20,7 @@ This repository contains beginner to intermediate level projects developed durin
 |---|---|---|
 | Dungeon Escape Simulation | DFS, Backtracking, OOP | A dungeon adventure simulation with recursive pathfinding and room interactions |
 | Smart Home System | OOP | Java-based simulation project that manages different types of smart devices through command-based input. |
-| [Future Project] | Data Structures | Coming soon |
+| 2D Platform Game | OOP, JavaFX | A JavaFX-based 2D side-scroller featuring dynamic asset spawning, physics-based movement, and active proximity abilities. |
 
 ---
 
@@ -51,6 +51,7 @@ Java-OOP-Projects/
 │
 ├── Dungeon-Escape-Simulation/
 ├── Smart-Home-System/
+├── 2D-Platform-Game/
 └── README.md
 ```
 
