@@ -9,6 +9,7 @@ A collection of Java projects created while learning and practicing:
 - Game Logic Design
 - DFS / Backtracking
 - Java Core Concepts
+- JavaFX Environment
 
 This repository contains beginner to intermediate level projects developed during my Computer Engineering journey.
 
