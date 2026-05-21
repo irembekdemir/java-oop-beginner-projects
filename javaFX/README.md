@@ -1,4 +1,4 @@
-# BBM104 Assignment 3: 2D Platform Game
+# 2D Platform Game
 
 This project is a dynamic 2D side-scrolling platform game developed using the JavaFX library, built upon solid Object-Oriented Programming (OOP) principles. The player navigates a character through a grid of platforms loaded directly from a `level.txt` file, dodging hazards to reach the ultimate treasure chest at the end.
 
