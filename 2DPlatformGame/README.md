@@ -2,7 +2,7 @@
 
 This project is a dynamic 2D side-scrolling platform game developed using the JavaFX library, built upon solid Object-Oriented Programming (OOP) principles. The player navigates a character through a grid of platforms loaded directly from a `level.txt` file, dodging hazards to reach the ultimate treasure chest at the end.
 
-> **💡 Note on Implementation:** The core JavaFX graphical engine architecture, base game loop structure, level file parsing template, and basic collision placeholders were provided as a starter framework by the instructor. The advanced gameplay mechanics, real-time item spawning loops, active target-destruction mechanics, and the automated countdown victory state were custom-implemented to complete the assignment specifications.
+> **💡 Note on Implementation:** This is an assignment based project. Hence the core JavaFX graphical engine architecture, base game loop structure, level file parsing template, and basic collision placeholders were provided as a starter framework by the instructor. The advanced gameplay mechanics, real-time item spawning loops, active target-destruction mechanics, and the automated countdown victory state were custom-implemented to complete the assignment specifications.
 
 ---
 
