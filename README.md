@@ -58,17 +58,5 @@ Java-OOP-Projects/
 
 ---
 
-# About Me
-
-AI Engineering student passionate about:
-- software development
-- algorithms
-- backend systems
-- object-oriented design
-
-Currently improving my Java and problem-solving skills through hands-on projects.
-
----
-
 # Author
 [irem bekdemir](https://github.com/irembekdemir)
