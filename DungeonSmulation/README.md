@@ -217,11 +217,11 @@ After damage is taken:
 The Witch asks the player a random math question.
 
 Correct answer:
-- player is teleported directly to the exit
-- 
+``` player is teleported directly to the exit```
+ 
 Wrong answer:
-- player dies instantly
-- 
+```player dies instantly ```
+
 ---
  
 ### Princess Room
