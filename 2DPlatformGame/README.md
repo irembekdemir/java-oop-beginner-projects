@@ -33,19 +33,19 @@ This project is a dynamic 2D side-scrolling platform game developed using the Ja
 
 The game engine utilizes JavaFX's native `AnimationTimer`, running a continuous frame-loop at approximately 60 FPS. It heavily takes advantage of polymorphism and class inheritance:
 
-### 1. `GameObject` (Abstract Base Class)
+### 1. `GameObject` (Abstract Base Class) 🎮
 The foundational blueprint class from which all physical game objects (`Player`, `Block`, `Spike`, `Terrain`, `Apple`) inherit. It encapsulates width, height, structural X-Y layout positioning, and contains an overridable `update()` method for handling unique frame-by-frame asset animations.
 
-### 2. `Player`
+### 2. `Player` 🚶
 The main interactive character class controlled by the user. It manipulates the `scaleX` transform matrix property to handle smooth directional turns without splitting the spritesheet asset.
 
-### 3. `Block` & `Terrain`
+### 3. `Block` & `Terrain` 🧱
 Solid, unyielding environmental structures that provide physical surfaces for entities to stand on. Collision detection engines (`isInvalid` & `checkActualIntersection`) employ a `0.1` pixel bounding tolerance to reliably prevent entities from passing through these solid barriers.
 
-### 4. `Apple` & `Spike`
+### 4. `Apple` & `Spike` 🍎
 Represent the pickable scoring items and hazardous static traps respectively, utilizing automated lifecycle tracking arrays.
 
-### 5. `GameEngine` (Core Framework)
+### 5. `GameEngine` (Core Framework) ⚙️
 * **Camera Viewport System:** As the player advances horizontally, the engine calculates an `offsetX` based on the predefined `VIEWPORT` bounds and shifts the entire `gameRoot` canvas layer. This effectively keeps the camera perfectly centered on the moving player.
 * **Physics Framework:** Implements a steady `GRAVITY` coefficient (0.1) that handles falling mechanics and simulates realistic aerial acceleration vectors.
 * **UI Layer Overlay:** Utilizes a `StackPane` arrangement to seamlessly superimpose the HUD labels (Score, Apples, Spikes counters) and modal containers (Game Over, Victory countdown alerts) over the actively rendering background graphics.
