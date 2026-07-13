@@ -11,7 +11,7 @@ A collection of Java projects created while learning and practicing:
 - Java Core Concepts
 - JavaFX Environment
 
-This repository contains beginner to intermediate level projects developed during my Computer Engineering journey.
+This repository contains beginner to intermediate level projects developed during my HU CS/AI BBM102-104 journey :d
 
 ---
 
@@ -32,16 +32,6 @@ This repository contains beginner to intermediate level projects developed durin
 - Recursive Algorithms
 - File Processing
 - Console Applications
-
----
-
-# Goals of This Repository
-
-- Improve problem-solving skills
-- Practice clean code principles
-- Strengthen OOP design understanding
-- Build algorithmic thinking
-- Track personal software development progress
 
 ---
 
